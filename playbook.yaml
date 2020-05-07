@@ -1,23 +1,11 @@
 ---
-#- hosts: all
-  #tasks:
-    #- name: install openssh-server
-#  #hosts: java
-#  tasks:
-#    - name: Check openssh are installed
-#      dnf:
-#        name: "{{ packages }}"
-#        state: present
-#      vars:
-#        packages:
-#          - openssh-server
-
-
+- hosts: all
+  tasks:
   - name: Enable openssh-server
     service:
       name: sshd
-      enabled: yes
-  
+      enabled: true
+
   - name: Start openssh-server
     service:
       name: sshd
